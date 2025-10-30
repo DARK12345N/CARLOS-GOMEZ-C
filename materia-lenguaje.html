@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguaje y Literatura - Colegio Prof. Carlos Gomez Cornejo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Imagenes/3dgifmaker06808.gif" alt="Logo Colegio">
+            </a>
+            <div class="logo-text">
+                <h2>Colegio Prof. Carlos Gomez Cornejo</h2>
+                <p>Nivel Secundario</p>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="nav-menu">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                    <span>Menú</span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#" onclick="showUserInfo()">Mi Perfil</a></li>
+                    <li><a href="login.html">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Materia Section -->
+    <section class="materia-section">
+        <div class="page-header">
+            <h1><i class="fas fa-book"></i> Lenguaje y Literatura</h1>
+            <p>Área de trabajo para docentes de Lenguaje y Literatura</p>
+        </div>
+
+        <!-- Información del Docente -->
+        <div class="teacher-info-card">
+            <div class="teacher-avatar">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="teacher-details">
+                <h2 id="teacherName">Prof. Juan Carlos Herrera</h2>
+                <p class="teacher-specialty">Especialidad: Lenguaje y Literatura</p>
+                <p class="teacher-status">Estado: Activo</p>
+            </div>
+        </div>
+
+        <!-- Panel de Materias -->
+        <div class="subjects-panel">
+            <h2>Materias Asignadas</h2>
+            <div class="subjects-grid">
+                <div class="subject-card" onclick="goToGrade('1ro')">
+                    <div class="subject-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Lenguaje 1ro</h3>
+                    <p>Grado: 1ro Secundaria</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-users"></i> 35 estudiantes</span>
+                        <span><i class="fas fa-clock"></i> 4 horas/semana</span>
+                    </div>
+                </div>
+
+                <div class="subject-card" onclick="goToGrade('2do')">
+                    <div class="subject-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Lenguaje 2do</h3>
+                    <p>Grado: 2do Secundaria</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-users"></i> 32 estudiantes</span>
+                        <span><i class="fas fa-clock"></i> 4 horas/semana</span>
+                    </div>
+                </div>
+
+                <div class="subject-card" onclick="goToGrade('3ro')">
+                    <div class="subject-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Literatura 3ro</h3>
+                    <p>Grado: 3ro Secundaria</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-users"></i> 28 estudiantes</span>
+                        <span><i class="fas fa-clock"></i> 5 horas/semana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Herramientas del Docente -->
+        <div class="teacher-tools">
+            <h2>Herramientas de Trabajo</h2>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('calificaciones')">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Calificaciones</h3>
+                    <p>Gestionar notas y evaluaciones</p>
+                </div>
+
+                <div class="tool-card" onclick="openTool('ensayos')">
+                    <div class="tool-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Ensayos y Redacciones</h3>
+                    <p>Revisar trabajos escritos</p>
+                </div>
+
+                <div class="tool-card" onclick="openTool('lecturas')">
+                    <div class="tool-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Plan de Lecturas</h3>
+                    <p>Gestionar lecturas obligatorias</p>
+                </div>
+
+                <div class="tool-card" onclick="openTool('recursos')">
+                    <div class="tool-icon">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <h3>Recursos Literarios</h3>
+                    <p>Material didáctico y textos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="plantel-docente.html">Plantel Docente</a></li>
+                    <li><a href="login.html">Acceso</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="recursos.html">Recursos Educativos</a></li>
+                    <li><a href="emprendimientos.html">Emprendimientos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Colegio Prof. Carlos Gomez Cornejo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Cargar información del usuario desde localStorage
+        window.onload = function() {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+            if (usuarioActual && usuarioActual.tipo === 'docente') {
+                document.getElementById('teacherName').textContent = usuarioActual.datos.nombre;
+            }
+        };
+
+        // Funciones para navegación
+        function goToGrade(grado) {
+            alert(`Navegando a Lenguaje y Literatura ${grado} Secundaria\n\nAquí podrás gestionar:\n- Lecturas obligatorias\n- Ensayos y redacciones\n- Gramática y ortografía\n- Literatura boliviana`);
+        }
+
+        function openTool(herramienta) {
+            const herramientas = {
+                'calificaciones': 'Sistema de Calificaciones\n\n- Calificar ensayos\n- Evaluar comprensión lectora\n- Notas de participación\n- Promedios finales',
+                'ensayos': 'Ensayos y Redacciones\n\n- Revisar trabajos escritos\n- Comentarios y correcciones\n- Guías de redacción\n- Ejemplos de buenas prácticas',
+                'lecturas': 'Plan de Lecturas\n\n- Libros obligatorios\n- Textos complementarios\n- Fechas de entrega\n- Actividades de comprensión',
+                'recursos': 'Recursos Literarios\n\n- Textos clásicos\n- Literatura boliviana\n- Diccionarios y gramáticas\n- Presentaciones multimedia'
+            };
+            
+            alert(herramientas[herramienta] || 'Herramienta en desarrollo');
+        }
+
+        function showUserInfo() {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+            if (usuarioActual) {
+                alert(`Información del Usuario:\n\nNombre: ${usuarioActual.datos.nombre}\nEspecialidad: ${usuarioActual.datos.especialidad}\nEmail: ${usuarioActual.datos.email}\nTeléfono: ${usuarioActual.datos.telefono}`);
+            }
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Colegio Prof. Carlos Gomez Cornejo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Imagenes/3dgifmaker06808.gif" alt="Logo Colegio">
+            </a>
+            <div class="logo-text">
+                <h2>Colegio Prof. Carlos Gomez Cornejo</h2>
+                <p>Nivel Secundario</p>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="nav-menu">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                    <span>Menú</span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="comunidad.html">Comunidad Educativa</a></li>
+                    <li><a href="recursos.html">Recursos Educativos</a></li>
+                    <li><a href="emprendimientos.html">Emprendimientos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="login-section">
+                <a href="login.html" class="login-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Acceso</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Galería Section -->
+    <section class="galeria">
+        <div class="page-header">
+            <h1>Galería de Imágenes</h1>
+        </div>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="eventos">Eventos</button>
+            <button class="filter-btn" data-filter="deportes">Deportes</button>
+            <button class="filter-btn" data-filter="academicos">Académicos</button>
+        </div>
+        <div class="galeria-grid">
+            <!-- Las imágenes se cargarán dinámicamente con JavaScript -->
+        </div>
+        <div class="gallery-modal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="modal-img">
+            <div class="modal-caption"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="comunidad.html">Comunidad Educativa</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="recursos.html">Recursos Educativos</a></li>
+                    <li><a href="emprendimientos.html">Emprendimientos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Colegio Prof. Carlos Gomez Cornejo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html> 

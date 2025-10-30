@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - Colegio Prof. Carlos Gomez Cornejo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Imagenes/3dgifmaker06808.gif" alt="Logo Colegio">
+            </a>
+            <div class="logo-text">
+                <h2>Colegio Prof. Carlos Gomez Cornejo</h2>
+                <p>Nivel Secundario</p>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="nav-menu">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                    <span>Menú</span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="comunidad.html">Comunidad Educativa</a></li>
+                    <li><a href="recursos.html">Recursos Educativos</a></li>
+                    <li><a href="emprendimientos.html">Emprendimientos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="login-section">
+                <a href="login.html" class="login-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Acceso</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <h1><i class="fas fa-user-circle"></i></h1>
+                <h2>Acceso al Sistema</h2>
+                <p>Selecciona tu tipo de usuario e ingresa tus credenciales</p>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="userType">
+                        <i class="fas fa-users"></i>
+                        Tipo de Usuario
+                    </label>
+                    <select id="userType" name="userType" required>
+                        <option value="">Selecciona tu tipo de usuario</option>
+                        <option value="estudiante">Estudiante</option>
+                        <option value="docente">Docente</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        Usuario
+                    </label>
+                    <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        Contraseña
+                    </label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+                        <button type="button" class="toggle-password" onclick="togglePassword()">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span class="checkmark"></span>
+                        Recordar sesión
+                    </label>
+                </div>
+                
+                <button type="submit" class="login-submit">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Iniciar Sesión
+                </button>
+            </form>
+            
+            <div class="login-footer">
+                <button type="button" class="register-btn" onclick="openRegisterModal()">
+                    <i class="fas fa-user-plus"></i>
+                    Registrarse
+                </button>
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Registro -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-plus"></i> Registro de Usuario</h2>
+                <span class="close" onclick="closeRegisterModal()">&times;</span>
+            </div>
+            
+            <form id="registerForm" class="register-form">
+                <div class="form-group">
+                    <label for="registerUserType">
+                        <i class="fas fa-users"></i>
+                        Tipo de Usuario
+                    </label>
+                    <select id="registerUserType" name="registerUserType" required>
+                        <option value="">Selecciona tu tipo de usuario</option>
+                        <option value="estudiante">Estudiante</option>
+                        <option value="docente">Docente</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">
+                            <i class="fas fa-user"></i>
+                            Primer Nombre
+                        </label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Ej: María">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">
+                            <i class="fas fa-user"></i>
+                            Apellidos
+                        </label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Ej: López García">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        Correo Electrónico
+                    </label>
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-phone"></i>
+                        Teléfono
+                    </label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Ej: 591-3-1234567">
+                </div>
+
+                <div class="form-group" id="studentFields" style="display: none;">
+                    <label for="grade">
+                        <i class="fas fa-graduation-cap"></i>
+                        Grado
+                    </label>
+                    <select id="grade" name="grade">
+                        <option value="">Selecciona tu grado</option>
+                        <option value="1ro Secundaria">1ro Secundaria</option>
+                        <option value="2do Secundaria">2do Secundaria</option>
+                        <option value="3ro Secundaria">3ro Secundaria</option>
+                        <option value="4to Secundaria">4to Secundaria</option>
+                        <option value="5to Secundaria">5to Secundaria</option>
+                        <option value="6to Secundaria">6to Secundaria</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="teacherFields" style="display: none;">
+                    <label for="specialty">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Especialidad
+                    </label>
+                    <select id="specialty" name="specialty">
+                        <option value="">Selecciona tu especialidad</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="Lenguaje y Literatura">Lenguaje y Literatura</option>
+                        <option value="Ciencias Naturales">Ciencias Naturales</option>
+                        <option value="Historia y Geografía">Historia y Geografía</option>
+                        <option value="Educación Física">Educación Física</option>
+                        <option value="Arte y Música">Arte y Música</option>
+                        <option value="Biología">Biología</option>
+                        <option value="Física">Física</option>
+                        <option value="Química">Química</option>
+                        <option value="Filosofía">Filosofía</option>
+                    </select>
+                </div>
+
+                <div class="generated-credentials" id="generatedCredentials" style="display: none;">
+                    <h3><i class="fas fa-key"></i> Credenciales Generadas</h3>
+                    <div class="credential-item">
+                        <label>Usuario:</label>
+                        <span id="generatedUsername"></span>
+                    </div>
+                    <div class="credential-item">
+                        <label>Contraseña:</label>
+                        <span id="generatedPassword"></span>
+                    </div>
+                    <p class="warning-text">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Guarda estas credenciales en un lugar seguro. Podrás cambiar tu contraseña después del primer acceso.
+                    </p>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="closeRegisterModal()">
+                        <i class="fas fa-times"></i>
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-register">
+                        <i class="fas fa-user-plus"></i>
+                        Registrarse
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="comunidad.html">Comunidad Educativa</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="recursos.html">Recursos Educativos</a></li>
+                    <li><a href="emprendimientos.html">Emprendimientos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Colegio Prof. Carlos Gomez Cornejo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Base de datos de estudiantes
+        const estudiantesDB = [
+            {
+                id: "EST001",
+                username: "estudiante1",
+                password: "123456",
+                nombre: "Ana María López",
+                grado: "1ro Secundaria",
+                seccion: "A",
+                email: "ana.lopez@colegio.edu.bo"
+            },
+            {
+                id: "EST002",
+                username: "estudiante2",
+                password: "123456",
+                nombre: "Carlos Rodríguez",
+                grado: "2do Secundaria",
+                seccion: "B",
+                email: "carlos.rodriguez@colegio.edu.bo"
+            },
+            {
+                id: "EST003",
+                username: "estudiante3",
+                password: "123456",
+                nombre: "María Fernanda Silva",
+                grado: "3ro Secundaria",
+                seccion: "A",
+                email: "maria.silva@colegio.edu.bo"
+            },
+            {
+                id: "EST004",
+                username: "estudiante4",
+                password: "123456",
+                nombre: "Luis Alberto Torres",
+                grado: "4to Secundaria",
+                seccion: "B",
+                email: "luis.torres@colegio.edu.bo"
+            },
+            {
+                id: "EST005",
+                username: "estudiante5",
+                password: "123456",
+                nombre: "Sofia Alejandra Vega",
+                grado: "5to Secundaria",
+                seccion: "A",
+                email: "sofia.vega@colegio.edu.bo"
+            },
+            {
+                id: "EST006",
+                username: "estudiante6",
+                password: "123456",
+                nombre: "Diego Andrés Mendoza",
+                grado: "6to Secundaria",
+                seccion: "B",
+                email: "diego.mendoza@colegio.edu.bo"
+            }
+        ];
+
+        // Base de datos de docentes
+        const docentesDB = [
+            {
+                id: "DOC001",
+                username: "profesor1",
+                password: "123456",
+                nombre: "Prof. María Elena González",
+                especialidad: "Matemáticas",
+                email: "maria.gonzalez@colegio.edu.bo",
+                telefono: "591-3-1234567"
+            },
+            {
+                id: "DOC002",
+                username: "profesor2",
+                password: "123456",
+                nombre: "Prof. Juan Carlos Herrera",
+                especialidad: "Lenguaje y Literatura",
+                email: "juan.herrera@colegio.edu.bo",
+                telefono: "591-3-1234568"
+            },
+            {
+                id: "DOC003",
+                username: "profesor3",
+                password: "123456",
+                nombre: "Prof. Rosa Isabel Morales",
+                especialidad: "Ciencias Naturales",
+                email: "rosa.morales@colegio.edu.bo",
+                telefono: "591-3-1234569"
+            },
+            {
+                id: "DOC004",
+                username: "profesor4",
+                password: "123456",
+                nombre: "Prof. Roberto Antonio Jiménez",
+                especialidad: "Historia y Geografía",
+                email: "roberto.jimenez@colegio.edu.bo",
+                telefono: "591-3-1234570"
+            },
+            {
+                id: "DOC005",
+                username: "profesor5",
+                password: "123456",
+                nombre: "Prof. Carmen Elena Ruiz",
+                especialidad: "Educación Física",
+                email: "carmen.ruiz@colegio.edu.bo",
+                telefono: "591-3-1234571"
+            },
+            {
+                id: "DOC006",
+                username: "profesor6",
+                password: "123456",
+                nombre: "Prof. Miguel Ángel Castro",
+                especialidad: "Arte y Música",
+                email: "miguel.castro@colegio.edu.bo",
+                telefono: "591-3-1234572"
+            }
+        ];
+
+        // Función para mostrar/ocultar contraseña
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleBtn = document.querySelector('.toggle-password i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.className = 'fas fa-eye-slash';
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.className = 'fas fa-eye';
+            }
+        }
+
+        // Funciones para el modal de registro
+        function openRegisterModal() {
+            document.getElementById('registerModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRegisterModal() {
+            document.getElementById('registerModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.getElementById('registerForm').reset();
+            document.getElementById('generatedCredentials').style.display = 'none';
+            document.getElementById('studentFields').style.display = 'none';
+            document.getElementById('teacherFields').style.display = 'none';
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const modal = document.getElementById('registerModal');
+            if (event.target === modal) {
+                closeRegisterModal();
+            }
+        }
+
+        // Mostrar campos específicos según el tipo de usuario
+        document.getElementById('registerUserType').addEventListener('change', function() {
+            const userType = this.value;
+            const studentFields = document.getElementById('studentFields');
+            const teacherFields = document.getElementById('teacherFields');
+            
+            if (userType === 'estudiante') {
+                studentFields.style.display = 'block';
+                teacherFields.style.display = 'none';
+                document.getElementById('grade').required = true;
+                document.getElementById('specialty').required = false;
+            } else if (userType === 'docente') {
+                studentFields.style.display = 'none';
+                teacherFields.style.display = 'block';
+                document.getElementById('grade').required = false;
+                document.getElementById('specialty').required = true;
+            } else {
+                studentFields.style.display = 'none';
+                teacherFields.style.display = 'none';
+                document.getElementById('grade').required = false;
+                document.getElementById('specialty').required = false;
+            }
+        });
+
+        // Función para generar usuario y contraseña
+        function generateCredentials(firstName, lastName, userType) {
+            const firstNameClean = firstName.toLowerCase().replace(/\s+/g, '');
+            const lastNameClean = lastName.toLowerCase().replace(/\s+/g, '');
+            const randomNum = Math.floor(Math.random() * 1000) + 1;
+            
+            let username;
+            if (userType === 'estudiante') {
+                username = `est${firstNameClean.charAt(0)}${lastNameClean.charAt(0)}${randomNum}`;
+            } else {
+                username = `prof${firstNameClean.charAt(0)}${lastNameClean.charAt(0)}${randomNum}`;
+            }
+            
+            const password = Math.random().toString(36).slice(-8);
+            
+            return { username, password };
+        }
+
+        // Función para generar ID único
+        function generateId(userType) {
+            const count = userType === 'estudiante' ? estudiantesDB.length + 1 : docentesDB.length + 1;
+            const prefix = userType === 'estudiante' ? 'EST' : 'DOC';
+            return `${prefix}${String(count).padStart(3, '0')}`;
+        }
+
+
+        // Función para autenticar usuarios
+        function autenticarUsuario(userType, username, password) {
+            if (userType === 'estudiante') {
+                return estudiantesDB.find(est => 
+                    est.username === username && est.password === password
+                );
+            } else if (userType === 'docente') {
+                return docentesDB.find(doc => 
+                    doc.username === username && doc.password === password
+                );
+            }
+            return null;
+        }
+
+        // Manejo del formulario de login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userType = document.getElementById('userType').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (!userType) {
+                alert('Por favor selecciona tu tipo de usuario');
+                return;
+            }
+            
+            // Autenticar usuario
+            const usuario = autenticarUsuario(userType, username, password);
+            
+            if (usuario) {
+                // Guardar información del usuario en localStorage
+                localStorage.setItem('usuarioActual', JSON.stringify({
+                    tipo: userType,
+                    datos: usuario
+                }));
+                
+                // Mostrar mensaje de bienvenida
+                if (userType === 'estudiante') {
+                    alert(`¡Bienvenido/a ${usuario.nombre}!\nGrado: ${usuario.grado}\nSección: ${usuario.seccion}`);
+                } else {
+                    alert(`¡Bienvenido/a ${usuario.nombre}!\nEspecialidad: ${usuario.especialidad}`);
+                }
+                
+                // Redirigir según el tipo de usuario y datos específicos
+                if (userType === 'estudiante') {
+                    // Redirigir a la página específica del curso del estudiante
+                    const grado = usuario.grado;
+                    if (grado.includes('1ro')) {
+                        window.location.href = 'curso-1ro-secundaria.html';
+                    } else if (grado.includes('2do')) {
+                        window.location.href = 'curso-2do-secundaria.html';
+                    } else if (grado.includes('3ro')) {
+                        window.location.href = 'curso-3ro-secundaria.html';
+                    } else if (grado.includes('4to')) {
+                        window.location.href = 'curso-4to-secundaria.html';
+                    } else if (grado.includes('5to')) {
+                        window.location.href = 'curso-5to-secundaria.html';
+                    } else if (grado.includes('6to')) {
+                        window.location.href = 'curso-6to-secundaria.html';
+                    } else {
+                        window.location.href = 'estudiantes.html';
+                    }
+                } else {
+                    // Redirigir a la página específica de la materia del docente
+                    const especialidad = usuario.especialidad.toLowerCase();
+                    if (especialidad.includes('matemáticas') || especialidad.includes('matematicas')) {
+                        window.location.href = 'materia-matematicas.html';
+                    } else if (especialidad.includes('lenguaje') || especialidad.includes('literatura')) {
+                        window.location.href = 'materia-lenguaje.html';
+                    } else if (especialidad.includes('ciencias naturales')) {
+                        window.location.href = 'materia-ciencias.html';
+                    } else if (especialidad.includes('historia') || especialidad.includes('geografía')) {
+                        window.location.href = 'materia-sociales.html';
+                    } else if (especialidad.includes('educación física') || especialidad.includes('deporte')) {
+                        window.location.href = 'materia-educacion-fisica.html';
+                    } else if (especialidad.includes('arte') || especialidad.includes('música')) {
+                        window.location.href = 'materia-arte.html';
+                    } else {
+                        window.location.href = 'plantel-docente.html';
+                    }
+                }
+            } else {
+                alert('Usuario o contraseña incorrectos. Por favor verifica tus credenciales.');
+            }
+        });
+
+        // Manejo del formulario de registro
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const userType = formData.get('registerUserType');
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            
+            // Validar campos específicos según el tipo de usuario
+            if (userType === 'estudiante') {
+                const grade = formData.get('grade');
+                if (!grade) {
+                    alert('Por favor selecciona tu grado');
+                    return;
+                }
+            } else if (userType === 'docente') {
+                const specialty = formData.get('specialty');
+                if (!specialty) {
+                    alert('Por favor selecciona tu especialidad');
+                    return;
+                }
+            }
+            
+            // Verificar si el email ya existe
+            const emailExists = [...estudiantesDB, ...docentesDB].some(user => user.email === email);
+            if (emailExists) {
+                alert('Este correo electrónico ya está registrado. Por favor usa otro correo.');
+                return;
+            }
+            
+            // Generar credenciales
+            const credentials = generateCredentials(firstName, lastName, userType);
+            const id = generateId(userType);
+            
+            // Crear objeto de usuario
+            let newUser;
+            if (userType === 'estudiante') {
+                const grade = formData.get('grade');
+                const seccion = Math.random() > 0.5 ? 'A' : 'B'; // Asignar sección aleatoria
+                
+                newUser = {
+                    id: id,
+                    username: credentials.username,
+                    password: credentials.password,
+                    nombre: `${firstName} ${lastName}`,
+                    grado: grade,
+                    seccion: seccion,
+                    email: email,
+                    telefono: phone,
+                    nuevoUsuario: true
+                };
+                
+                estudiantesDB.push(newUser);
+            } else {
+                const specialty = formData.get('specialty');
+                
+                newUser = {
+                    id: id,
+                    username: credentials.username,
+                    password: credentials.password,
+                    nombre: `Prof. ${firstName} ${lastName}`,
+                    especialidad: specialty,
+                    email: email,
+                    telefono: phone,
+                    nuevoUsuario: true
+                };
+                
+                docentesDB.push(newUser);
+            }
+            
+            // Mostrar credenciales generadas
+            document.getElementById('generatedUsername').textContent = credentials.username;
+            document.getElementById('generatedPassword').textContent = credentials.password;
+            document.getElementById('generatedCredentials').style.display = 'block';
+            
+            // Mostrar mensaje de éxito
+            alert(`¡Registro exitoso!\n\nUsuario: ${credentials.username}\nContraseña: ${credentials.password}\n\nGuarda estas credenciales en un lugar seguro.`);
+            
+            // Actualizar consola
+            console.log('Nuevo usuario registrado:', newUser);
+            console.log('Base de datos actualizada');
+        });
+
+        // Mostrar información de prueba
+        console.log('Base de datos de estudiantes:', estudiantesDB);
+        console.log('Base de datos de docentes:', docentesDB);
+        console.log('Credenciales de prueba:');
+        console.log('Estudiantes: username: estudiante1, password: 123456');
+        console.log('Docentes: username: profesor1, password: 123456');
+    </script>
+</body>
+</html>

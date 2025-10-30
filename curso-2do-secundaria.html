@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2do Secundaria - Colegio Prof. Carlos Gomez Cornejo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Imagenes/3dgifmaker06808.gif" alt="Logo Colegio">
+            </a>
+            <div class="logo-text">
+                <h2>Colegio Prof. Carlos Gomez Cornejo</h2>
+                <p>Nivel Secundario</p>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <div class="nav-menu">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                    <span>Menú</span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#" onclick="showStudentInfo()">Mi Perfil</a></li>
+                    <li><a href="login.html">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Curso Section -->
+    <section class="curso-section">
+        <div class="page-header">
+            <h1><i class="fas fa-graduation-cap"></i> 2do Secundaria</h1>
+            <p>Panel estudiantil para alumnos de segundo año de secundaria</p>
+        </div>
+
+        <!-- Información del Estudiante -->
+        <div class="student-info-card">
+            <div class="student-avatar">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="student-details">
+                <h2 id="studentName">Carlos Rodríguez</h2>
+                <p class="student-grade">Grado: 2do Secundaria</p>
+                <p class="student-section">Sección: B</p>
+                <p class="student-status">Estado: Activo</p>
+            </div>
+        </div>
+
+        <!-- Materias del Curso -->
+        <div class="subjects-panel">
+            <h2>Mis Materias</h2>
+            <div class="subjects-grid">
+                <div class="subject-card" onclick="goToSubject('matematicas')">
+                    <div class="subject-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Matemáticas</h3>
+                    <p>Prof. María Elena González</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-clock"></i> 5 horas/semana</span>
+                        <span><i class="fas fa-star"></i> Promedio: 78</span>
+                    </div>
+                </div>
+
+                <div class="subject-card" onclick="goToSubject('lenguaje')">
+                    <div class="subject-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Lenguaje y Literatura</h3>
+                    <p>Prof. Juan Carlos Herrera</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-clock"></i> 4 horas/semana</span>
+                        <span><i class="fas fa-star"></i> Promedio: 85</span>
+                    </div>
+                </div>
+
+                <div class="subject-card" onclick="goToSubject('ciencias')">
+                    <div class="subject-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Ciencias Naturales</h3>
+                    <p>Prof. Rosa Isabel Morales</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-clock"></i> 3 horas/semana</span>
+                        <span><i class="fas fa-star"></i> Promedio: 82</span>
+                    </div>
+                </div>
+
+                <div class="subject-card" onclick="goToSubject('sociales')">
+                    <div class="subject-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Ciencias Sociales</h3>
+                    <p>Prof. Roberto Antonio Jiménez</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-clock"></i> 3 horas/semana</span>
+                        <span><i class="fas fa-star"></i> Promedio: 88</span>
+                    </div>
+                </div>
+
+                <div class="subject-card" onclick="goToSubject('educacion-fisica')">
+                    <div class="subject-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Educación Física</h3>
+                    <p>Prof. Carmen Elena Ruiz</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-clock"></i> 2 horas/semana</span>
+                        <span><i class="fas fa-star"></i> Promedio: 92</span>
+                    </div>
+                </div>
+
+                <div class="subject-card" onclick="goToSubject('arte')">
+                    <div class="subject-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Arte y Música</h3>
+                    <p>Prof. Miguel Ángel Castro</p>
+                    <div class="subject-stats">
+                        <span><i class="fas fa-clock"></i> 2 horas/semana</span>
+                        <span><i class="fas fa-star"></i> Promedio: 89</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Herramientas del Estudiante -->
+        <div class="student-tools">
+            <h2>Mis Herramientas</h2>
+            <div class="tools-grid">
+                <div class="tool-card" onclick="openTool('calificaciones')">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Mis Calificaciones</h3>
+                    <p>Ver mis notas y promedios</p>
+                </div>
+
+                <div class="tool-card" onclick="openTool('asistencia')">
+                    <div class="tool-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Mi Asistencia</h3>
+                    <p>Control de asistencia personal</p>
+                </div>
+
+                <div class="tool-card" onclick="openTool('horario')">
+                    <div class="tool-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Horario de Clases</h3>
+                    <p>Ver horario semanal</p>
+                </div>
+
+                <div class="tool-card" onclick="openTool('tareas')">
+                    <div class="tool-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Tareas y Actividades</h3>
+                    <p>Gestionar tareas pendientes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificaciones -->
+        <div class="notifications-panel">
+            <h2>Notificaciones Recientes</h2>
+            <div class="notifications-list">
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Ensayo de Literatura</h4>
+                        <p>Análisis de "Raza de Bronce" - Fecha límite: 18 de enero</p>
+                        <span class="notification-time">Hace 1 hora</span>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Examen de Álgebra</h4>
+                        <p>Ecuaciones de segundo grado - 22 de enero</p>
+                        <span class="notification-time">Hace 4 horas</span>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Laboratorio de Química</h4>
+                        <p>Experimento sobre reacciones químicas</p>
+                        <span class="notification-time">Ayer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="estudiantes.html">Estudiantes</a></li>
+                    <li><a href="login.html">Acceso</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="recursos.html">Recursos Educativos</a></li>
+                    <li><a href="emprendimientos.html">Emprendimientos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Colegio Prof. Carlos Gomez Cornejo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Cargar información del usuario desde localStorage
+        window.onload = function() {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+            if (usuarioActual && usuarioActual.tipo === 'estudiante') {
+                document.getElementById('studentName').textContent = usuarioActual.datos.nombre;
+            }
+        };
+
+        // Funciones para navegación
+        function goToSubject(materia) {
+            const materias = {
+                'matematicas': 'Matemáticas 2do\n\n- Álgebra básica\n- Geometría plana\n- Ecuaciones\n- Problemas matemáticos',
+                'lenguaje': 'Lenguaje y Literatura 2do\n\n- Gramática avanzada\n- Literatura boliviana\n- Ensayos y redacciones\n- Comprensión lectora',
+                'ciencias': 'Ciencias Naturales 2do\n\n- Química básica\n- Física elemental\n- Biología celular\n- Laboratorios',
+                'sociales': 'Ciencias Sociales 2do\n\n- Historia de Bolivia\n- Geografía física\n- Economía básica\n- Investigaciones',
+                'educacion-fisica': 'Educación Física 2do\n\n- Deportes de equipo\n- Atletismo\n- Gimnasia\n- Salud y nutrición',
+                'arte': 'Arte y Música 2do\n\n- Historia del arte\n- Técnicas artísticas\n- Música folclórica\n- Expresión creativa'
+            };
+            
+            alert(materias[materia] || 'Materia en desarrollo');
+        }
+
+        function openTool(herramienta) {
+            const herramientas = {
+                'calificaciones': 'Mis Calificaciones 2do\n\n- Notas por trimestre\n- Promedios por materia\n- Progreso académico\n- Metas del año',
+                'asistencia': 'Mi Asistencia 2do\n\n- Asistencia mensual\n- Estadísticas de puntualidad\n- Justificaciones\n- Record personal',
+                'horario': 'Horario de Clases 2do\n\n- Horario semanal\n- Materias por día\n- Aulas asignadas\n- Profesores',
+                'tareas': 'Tareas y Actividades 2do\n\n- Trabajos pendientes\n- Fechas importantes\n- Recursos necesarios\n- Estado de avance'
+            };
+            
+            alert(herramientas[herramienta] || 'Herramienta en desarrollo');
+        }
+
+        function showStudentInfo() {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+            if (usuarioActual) {
+                alert(`Información del Estudiante:\n\nNombre: ${usuarioActual.datos.nombre}\nGrado: ${usuarioActual.datos.grado}\nSección: ${usuarioActual.datos.seccion}\nEmail: ${usuarioActual.datos.email}`);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
