@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             // Toggle del menú
-            navLinks.classList.toggle('inactive'); 
+            navLinks.classList.toggle('active'); 
             menuToggle.classList.toggle('inactive');
             
             // Prevenir scroll del body cuando el menú está abierto
