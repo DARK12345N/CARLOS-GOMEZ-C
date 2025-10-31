@@ -358,7 +358,7 @@ body {
 
 .nav-links.active {
     display: flex; /* Muestra el menú cuando tiene la clase active */
-    animation: slideDownFade 0.4s ease-out;
+    animation: slideDownFade 0.s ease-out;
 }
 
 @keyframes slideDownFade {
