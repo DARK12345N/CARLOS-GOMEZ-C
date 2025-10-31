@@ -1,0 +1,21 @@
+PASOS PARA INSTALAR A LA PANTALLA
+
+copia y pega  los vinculos al archivo index de su proyecto.
+
+PASO 1. el primer link y su comenntario pega en el encabezado, antes de la etiqueta de cierre </head> 
+
+PASO 2. el segundo link y su comenntario pega al ultimo de todas las etiquetas que hay en body, antes de la etiqueta de cierre </body> 
+
+
+
+<!-- Link para instalar a pantalla -->
+<link rel="manifest" href="/instalar/manifest.json">
+
+
+
+
+
+
+
+<!-- script para instalar a pantalla -->
+<script src="/instalar/pwa.js"></script>
