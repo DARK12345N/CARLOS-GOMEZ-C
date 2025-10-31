@@ -1,12 +1,12 @@
 // Manejo del menú hamburguesa
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.nav-links');
-    const navLinks = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
 
     if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click',() => {
+        menuToggle.addEventListener('click', () => {
             // Toggle del menú
-            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('active'); 
             menuToggle.classList.toggle('inactive');
             
             // Prevenir scroll del body cuando el menú está abierto
